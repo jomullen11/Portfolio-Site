@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+// must have Router or else will not work
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './Components/Home'
 import Resume from './Components/Resume'

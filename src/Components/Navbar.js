@@ -1,5 +1,11 @@
 import React from 'react'
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom"
+
+
+
+const active={ color: '#E8E6E4', borderBottom: 'white outset 3px', borderRight: 'white outset 3px', borderTop: 'black outset 3px', borderLeft: 'black outset 3px' };
+
+
 
 const Navbar = () => {
         return (
@@ -7,11 +13,11 @@ const Navbar = () => {
                     
                     <ul>
                         <div className="NavButton">
-                            <Link activeclassname='active' exact='true' to='/' id="Link">Home</Link>
-                            <Link activeclassname='active' to='/resume' id="Link">Resume</Link>
-                            <Link activeclassname='active' to='/aboutme' id="Link">About Me</Link>
-                            <Link activeclassname='active' to='/projects' id="Link">Projects</Link>
-                            <Link activeclassname='active' to='/contact' id="Link">Contact</Link>
+                            <NavLink activeStyle={active} exact to='/' id="Link">Home</NavLink>
+                            <NavLink activeStyle={active} to='/resume' id="Link">Resume</NavLink>
+                            <NavLink activeStyle={active} to='/aboutme' id="Link">About Me</NavLink>
+                            <NavLink activeStyle={active} to='/projects' id="Link">Projects</NavLink>
+                            <NavLink activeStyle={active} to='/contact' id="Link">Contact</NavLink>
                         </div>
                     </ul>
                     

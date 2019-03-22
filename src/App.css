@@ -25,25 +25,11 @@ a {
   color: #232226;
 }
 
-a:link {
-  color: purple; 
-}
 
 a:hover {
    color: #8B8A87;
 }
 
-a:active {
-  color: #EC413E;
-}
-
-#Link:focus {
-  border-top-color: black;
-  border-left-color: black;
-  border-right-color: white;
-  border-bottom-color: white;
-}
-
-.NavButton + .active {
-  background-color: red
+h2 {
+  color: white;
 }

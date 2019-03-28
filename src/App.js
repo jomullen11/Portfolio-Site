@@ -3,6 +3,7 @@ import React, { Component, Fragment } from 'react';
 import './App.css';
 import Navbar from './Components/Navbar'
 import Routes from './Route'
+import Footer from './Components/StickyFooter'
 
 class App extends Component {
   render() {
@@ -11,6 +12,7 @@ class App extends Component {
         <Fragment>
           <Navbar />
           <Routes />
+          <Footer />
         </Fragment>
       </div>
     );

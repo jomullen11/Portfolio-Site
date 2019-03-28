@@ -1,19 +1,121 @@
-import React from 'react'
+import React, { Component, Fragment } from 'react'
 
-// class Home extends Component {
-//     render() {
-//         return (
-// <img class="profile-pic" 
-//     src="data:image/png;base64,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" 
-// alt="Be Yourself"/>
-//     )}
-// }
 
-const Home = () => (
-      <div>
-        <h2>Home</h2>
+
+class Home extends Component {
+    render() {
+        return (
+  <Fragment class="Home">
+    <div class='gradient-home-top'>
+      <h1>Jordan Mullen</h1>
+      <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/55795251_10156206218656989_6479564890276102144_n.jpg?_nc_cat=104&_nc_ht=scontent-ort2-2.xx&oh=ec3906a73f8a905a597cec6ed4beab7c&oe=5D0C316F" alt="FlibbityFlap" id="profilePicture"/>
+    {/* <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> */}
+      <div class="iconContainer">
+      <h2>Skills:</h2>
+      <ul class="Icons">
+        <div class="tooltip">
+          <i class="devicon-html5-plain-wordmark colored skillsIcon"></i>
+          <span class="tooltiptext">HTML 5</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-css3-plain-wordmark colored skillsIcon"></i>
+          <span class="tooltiptext">CSS 3</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-javascript-plain colored skillsIcon"></i>
+          <span class="tooltiptext">JavaScript</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-bootstrap-plain colored skillsIcon"></i>
+          <span class="tooltiptext">Bootstrap</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-nodejs-plain colored skillsIcon"></i>
+          <span class="tooltiptext">NodeJS</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-jquery-plain-wordmark colored skillsIcon"></i>
+          <span class="tooltiptext">JQuery</span>
+        </div>
+        <div class="tooltip">
+          <img src="data:image/jpeg;base64,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" alt="NPM" class="skillsPicture"></img>
+          <span class="tooltiptext">NPM</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-express-original skillsIcon"></i>
+          <span class="tooltiptext">Express</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-mongodb-plain colored skillsIcon"></i>
+          <span class="tooltiptext">MongoDB</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-mysql-plain colored skillsIcon"></i>
+          <span class="tooltiptext">MySQL</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-postgresql-plain colored skillsIcon"></i>
+          <span class="tooltiptext">PostgreSQL</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-github-plain colored skillsIcon"></i>
+          <span class="tooltiptext">GitHub</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-gitlab-plain colored skillsIcon"></i>
+          <span class="tooltiptext">GitLab</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-visualstudio-plain colored skillsIcon"></i>
+          <span class="tooltiptext">Visual Studio Code</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-wordpress-plain skillsIcon"></i>
+          <span class="tooltiptext">WordPress</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-react-original colored skillsIcon"></i>
+          <span class="tooltiptext">React</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-angularjs-plain colored skillsIcon "></i>
+          <span class="tooltiptext">AngularJS</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-vuejs-plain colored skillsIcon"></i>
+          <span class="tooltiptext">VueJS</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-heroku-original colored skillsIcon"></i>
+          <span class="tooltiptext">Heroku</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-trello-plain colored skillsIcon"></i>
+          <span class="tooltiptext">Trello</span>
+        </div>
+        <div class="tooltip">
+          <i class="devicon-photoshop-line colored skillsIcon"></i>
+          <span class="tooltiptext">Photoshop</span>
+        </div>
+      </ul>
       </div>
-    );
+    </div>
+    {/* <div class="gradient-home-bottom">
+      <h3> The Rest</h3>
+    </div> */}
+</Fragment>
+    )}
+}
+
+// const Home = () => (
+//       <div class='gradient-home-top'>
+//         <h1>Jordan Mullen</h1>
+//         <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7JeyNwwt_zPOPzul4wC8-ZpBP7IsnGsc47_9ta4XMvQQRxUn_cg" alt="FlibbityFlap" id="profilePicture"/>
+//       </div>
+//       <div class="gradient-home-bottom">
+//         <h3> The Rest</h3>
+//       </div>
+//     );
 
 
 export default Home

@@ -9,7 +9,7 @@ const active={ color: '#E8E6E4', borderBottom: 'white outset 3px', borderRight: 
 
 const Navbar = () => {
         return (
-                <nav fixed="top">
+                <nav>
                     
                     <ul>
                         <div className="NavButton">

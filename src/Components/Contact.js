@@ -1,62 +1,44 @@
 import React, { Component } from 'react'
 
-const send = <img src="https://img.icons8.com/ios-glyphs/16/000000/filled-sent.png" alt="Send Icon" />
-
 class Contact extends Component{
-  send = <img src="https://img.icons8.com/ios-glyphs/16/000000/filled-sent.png" alt="Send Icon" />
-
+  
   render(){
     return(
-      <div class="contactPage">
-        <h2>Contact Me!</h2>
-        <br/>
-        <form action="mailto:jordan.mullen@hotmail.com" method="post" encType="text/plain">
-          <fieldset>
-            <legend>Send Me and Email:</legend>
-            <label for="emailAddress">What's your email?</label>
-            <br/>
-              <input id="emailAddress" type="email" name="mail" required/>
-            <br/>
-            <label for="emailName">What's your name?</label>
-            <br/>
-              <input id="emailName" type="text" name="name"/>
-            <br/>
-            <label for="emailContent">Write your email here:</label>
-            <br/>
-              <textarea id="emailContent" type="text" name="comment" required />
-            <br/>
-            <input type="submit" value="Send" />
-            <input type="reset" value="Reset"/>
-          </fieldset>
+      <div className="contactPage">
+        <h1>Contact Me!</h1>
+        <hr class="headerRow"/>
+        <form class="contactFieldset">
+            <legend>Would you like to...</legend>
+            <span>
+              <form action="mailto:jordan.mullen@hotmail.com?Subject=Employment%20Inquiry" target="_top" rel="noopener noreferrer" id="contactButtons" >
+              <div class="container">
+                <button type="submit" id="emailButton">Email Me?</button>
+                <button type="button" id="callButton" data-toggle="modal" data-target="#myModal">Call Me?</button>
+                {/* <!-- Modal --> */}
+                <div class="modal fade" id="myModal" role="dialog">
+                  <div class="modal-dialog">
+                  
+                    {/* <!-- Modal content--> */}
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Give me a Call!</h4>
+                      </div>
+                      <div class="modal-body">
+                        <a href="tel:8016154335">(801) 615-4335</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </form>
+            </span>
         </form>
       </div>
+      
+      
     )
   }
 }
-
-// const Contact = () => (
-      // <div class="contactPage">
-      //   <h2>Contact Me!</h2>
-      //   <br/>
-      //   <form action="mailto:jordan.mullen@hotmail.com" method="post" enctype="text/plain">
-      //     <fieldset>
-      //       <legend>Send Me and Email:</legend>
-      //       <label for="emailAddress">What's your email?</label>
-      //       <br/>
-      //         <input id="emailAddress" type="email" required/>
-      //       <br/>
-      //       <label for="emailName">What's your name?</label>
-      //       <br/>
-      //         <input id="emailName" type="text"/>
-      //       <br/>
-      //       <label for="emailContent">Write your email here:</label>
-      //       <br/>
-      //         <textarea id="emailContent" type="text" required />
-      //       <br/>
-      //       <input type="submit" value={send} />
-      //     </fieldset>
-      //   </form>
-      // </div>
-//     );
 
 export default Contact;

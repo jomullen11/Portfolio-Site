@@ -1,30 +1,29 @@
 import React, { Component } from 'react'
 
 class Contact extends Component{
-  
   render(){
     return(
       <div className="contactPage">
         <h1>Contact Me!</h1>
-        <hr class="headerRow"/>
-        <form class="contactFieldset">
+        <hr className="headerRow"/>
+        <div className="contactFieldset">
             <legend>Would you like to...</legend>
             <span>
               <form action="mailto:jordan.mullen@hotmail.com?Subject=Employment%20Inquiry" target="_top" rel="noopener noreferrer" id="contactButtons" >
-              <div class="container">
+              <div className="container">
                 <button type="submit" id="emailButton">Email Me?</button>
                 <button type="button" id="callButton" data-toggle="modal" data-target="#myModal">Call Me?</button>
                 {/* <!-- Modal --> */}
-                <div class="modal fade" id="myModal" role="dialog">
-                  <div class="modal-dialog">
+                <div className="contactModal contactFade" id="myModal" role="dialog">
+                  <div className="modalDialog">
                   
                     {/* <!-- Modal content--> */}
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal">&times;</button>
-                        <h4 class="modal-title">Give me a Call!</h4>
+                    <div className="modalContent">
+                      <div className="modalHeader">
+                        <button type="button" className="contactClose" data-dismiss="modal">&times;</button>
+                        <h4 className="modalTitle">Give me a Call!</h4>
                       </div>
-                      <div class="modal-body">
+                      <div className="modalBody">
                         <a href="tel:8016154335">(801) 615-4335</a>
                       </div>
                     </div>
@@ -33,10 +32,8 @@ class Contact extends Component{
               </div>
               </form>
             </span>
-        </form>
+        </div>
       </div>
-      
-      
     )
   }
 }

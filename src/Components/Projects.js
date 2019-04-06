@@ -96,16 +96,16 @@ function Projects() {
           </div>
           <div className="col-md-4 mt-5">
             <div className="card text-center">
-              <a href="https://github.com/jomullen11/final-reactify-forms" target="_blank" rel="noopener noreferrer"><img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/55669467_10156215084401989_1220581004889030656_n.jpg?_nc_cat=111&_nc_ht=scontent-sjc3-1.xx&oh=e7800caf70a6f577d16049479e3e19b0&oe=5D070B7C" alt="Forms" /></a>
+              <a href="https://github.com/jomullen11/Portfolio-Site" target="_blank" rel="noopener noreferrer"><img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/56285301_10156229214076989_4765329539909812224_o.jpg?_nc_cat=104&_nc_ht=scontent-sjc3-1.xx&oh=b00e5e0930bb346b77873454dc8ce234&oe=5D39E6F0" alt="Profile Site" /></a>
               <div className="card-body" id="card">
-                <h4 className="card-title">Forms</h4>
+                <h4 className="card-title">Profile Site</h4>
                 <hr/>
-                <p className="card-title">Basic User Form That Sets State</p>
+                <p className="card-title">You're here! Take a look around!</p>
               </div>
               <div className="card-footer text-muted">
                 <div className="row">
                   <div className="col">
-                    <a href="https://github.com/jomullen11/final-reactify-forms" target="_blank" rel="noopener noreferrer">View on GitHub<i className="devicon-github-plain"></i></a>
+                    <a href="https://github.com/jomullen11/Portfolio-Site" target="_blank" rel="noopener noreferrer">View on GitHub<i className="devicon-github-plain"></i></a>
                   </div>
                 </div>
               </div>

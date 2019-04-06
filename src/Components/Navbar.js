@@ -15,7 +15,7 @@ const Navbar = () => {
                         <div className="NavButton">
                             <NavLink activeStyle={active} exact to='/' className="Link">Home</NavLink>
                             <NavLink activeStyle={active} to='/resume' className="Link">Resume</NavLink>
-                            {/* <NavLink activeStyle={active} to='/aboutme' className="Link" >About Me</NavLink> */}
+                            <NavLink activeStyle={active} to='/aboutme' className="Link" >About Me</NavLink>
                             <NavLink activeStyle={active} to='/projects' className="Link">Projects</NavLink>
                             <NavLink activeStyle={active} to='/contact' className="Link">Contact</NavLink>
                         </div>

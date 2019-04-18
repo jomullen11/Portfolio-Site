@@ -10,11 +10,11 @@ function Projects() {
         <div className="row">
           <div className="col-md-4 mt-5">
             <div className="card text-center">
-              <a href="http://staging.1280thezone.com" target="_blank" rel="noopener noreferrer"><img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/56162059_10156215084466989_4977167725064355840_n.jpg?_nc_cat=100&_nc_ht=scontent-sjc3-1.xx&oh=6421236deb707f6479cbd7554321c813&oe=5D0EC70A" alt="Teams Sidebar"/></a>
+              <a href="http://www.1280thezone.com" target="_blank" rel="noopener noreferrer"><img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/56162059_10156215084466989_4977167725064355840_n.jpg?_nc_cat=100&_nc_ht=scontent-sjc3-1.xx&oh=6421236deb707f6479cbd7554321c813&oe=5D0EC70A" alt="Teams Sidebar"/></a>
               <div className="card-body" id="card">
                 <h4 className="card-title">Teams Sidebar</h4>
                 <hr/>
-                <p className="card-title">Teams Pullout Bar For <a href="http://staging.1280thezone.com" target="_blank" rel="noopener noreferrer">1280thezone.com</a>, Pulls Out On Hover And Clicks In Mobile</p>
+                <p className="card-title">Teams Pullout Bar For <a href="http://www.1280thezone.com" target="_blank" rel="noopener noreferrer" style={{textDecoration: 'underline'}}>1280thezone.com</a>, Pulls Out On Hover And Clicks In Mobile</p>
               </div>
               <div className="card-footer text-muted">
                 <div className="row">
@@ -27,17 +27,16 @@ function Projects() {
           </div>
           <div className="col-md-4 mt-5">
             <div className="card text-center">
-              <a href="https://github.com/jomullen11/CRUD-API" target="_blank" rel="noopener noreferrer"> <img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/55790028_10156215084301989_3717233824627687424_n.jpg?_nc_cat=105&_nc_ht=scontent-sjc3-1.xx&oh=ba344f13f757744cc36bf7ab095b258a&oe=5D415BEE" alt="Crud"/></a>
+              <a href="https://github.com/jomullen11/Portfolio-Site" target="_blank" rel="noopener noreferrer"><img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/56285301_10156229214076989_4765329539909812224_o.jpg?_nc_cat=104&_nc_ht=scontent-sjc3-1.xx&oh=b00e5e0930bb346b77873454dc8ce234&oe=5D39E6F0" alt="Profile Site" /></a>
               <div className="card-body" id="card">
-                <h4 className="card-title">CRUD</h4>
+                <h4 className="card-title">Profile Site</h4>
                 <hr/>
-                <p className="card-title">Basic CRUD on A Register Form</p>
+                <p className="card-title">You're here! Take a look around!</p>
               </div>
               <div className="card-footer text-muted">
                 <div className="row">
                   <div className="col">
-                    <a href="https://github.com/jomullen11/CRUD-UI" target="_blank" rel="noopener noreferrer">View UI on GitHub<i className="devicon-github-plain"></i></a><br/>
-                    <a href="https://github.com/jomullen11/CRUD-API" target="_blank" rel="noopener noreferrer">View API on GitHub<i className="devicon-github-plain"></i></a>
+                    <a href="https://github.com/jomullen11/Portfolio-Site" target="_blank" rel="noopener noreferrer">View on GitHub<i className="devicon-github-plain"></i></a>
                   </div>
                 </div>
               </div>
@@ -96,16 +95,17 @@ function Projects() {
           </div>
           <div className="col-md-4 mt-5">
             <div className="card text-center">
-              <a href="https://github.com/jomullen11/Portfolio-Site" target="_blank" rel="noopener noreferrer"><img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/56285301_10156229214076989_4765329539909812224_o.jpg?_nc_cat=104&_nc_ht=scontent-sjc3-1.xx&oh=b00e5e0930bb346b77873454dc8ce234&oe=5D39E6F0" alt="Profile Site" /></a>
+              <a href="https://github.com/jomullen11/CRUD-API" target="_blank" rel="noopener noreferrer"> <img className="card-img-top cardImage" src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/55790028_10156215084301989_3717233824627687424_n.jpg?_nc_cat=105&_nc_ht=scontent-sjc3-1.xx&oh=ba344f13f757744cc36bf7ab095b258a&oe=5D415BEE" alt="Crud"/></a>
               <div className="card-body" id="card">
-                <h4 className="card-title">Profile Site</h4>
+                <h4 className="card-title">CRUD</h4>
                 <hr/>
-                <p className="card-title">You're here! Take a look around!</p>
+                <p className="card-title">Basic CRUD on A Register Form</p>
               </div>
               <div className="card-footer text-muted">
                 <div className="row">
                   <div className="col">
-                    <a href="https://github.com/jomullen11/Portfolio-Site" target="_blank" rel="noopener noreferrer">View on GitHub<i className="devicon-github-plain"></i></a>
+                    <a href="https://github.com/jomullen11/CRUD-UI" target="_blank" rel="noopener noreferrer">View UI on GitHub<i className="devicon-github-plain"></i></a><br/>
+                    <a href="https://github.com/jomullen11/CRUD-API" target="_blank" rel="noopener noreferrer">View API on GitHub<i className="devicon-github-plain"></i></a>
                   </div>
                 </div>
               </div>

@@ -5,7 +5,7 @@ import React from 'react'
 const Home = () => {
         return (
     <div>
-      <img src="https://scontent-ort2-2.xx.fbcdn.net/v/t1.0-9/55795251_10156206218656989_6479564890276102144_n.jpg?_nc_cat=104&_nc_ht=scontent-ort2-2.xx&oh=ec3906a73f8a905a597cec6ed4beab7c&oe=5D0C316F" alt="FlibbityFlap" id="profilePicture"/>
+      <img src="https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/55795251_10156206218656989_6479564890276102144_n.jpg?_nc_cat=104&_nc_eui2=AeECWXiu-QIpWFSm8vIgUJ3qUq2m8Ax21KPTuHEuTgO845y83CJYseyp2uMMJ5SlTMP4MwlsmeOI37rWF5-rzFYDDlz0YwaqUQf_WwxPp7sIsg&_nc_oc=AQkL9pvuVHw3T36H0ZUflHjD40Jv78j9veMNMKDhqa4kL977otDw3IfAoIiLkbdkY14QtMF5pkxi0SVMWdw4f6zI&_nc_ht=scontent-sjc3-1.xx&oh=3c24e343f1dc78a84f323e029d1e9b9c&oe=5DAA656F" alt="Jordan Mullen" id="profilePicture"/>
       <h1>Jordan Mullen</h1>
     {/* <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> <br/> */}
       <h2>Skills:</h2>

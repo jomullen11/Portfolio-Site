@@ -1,24 +1,143 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-    <meta name="theme-color" content="#000000" />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-    <link rel="stylesheet" href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
-    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Lato" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
-    <title>Jordan Mullen</title>
-  </head>
-  <body class="App">
-    <noscript>You need to enable JavaScript to run this app.</noscript>
-    <div id="root"></div>
-    <canvas id="pdf"></canvas>
-  </body>
+
+<head>
+  <meta charset="utf-8" />
+  <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+  <link rel="stylesheet"
+    href="https://cdn.rawgit.com/konpa/devicon/df6431e323547add1b4cf45992913f15286456d3/devicon.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro|Lato" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet" type="text/css">
+  <script src="https://apis.google.com/js/api:client.js"></script>
+  <script>
+    var googleUser = {};
+    var startApp = function () {
+      gapi.load('auth2', function () {
+        // Retrieve the singleton for the GoogleAuth library and set up the client.
+        auth2 = gapi.auth2.init({
+          client_id: '388134816034-npj2q31vu2itpmbfr76bd0ur9o2asrgn.apps.googleusercontent.com',
+          cookiepolicy: 'single_host_origin',
+          // Request scopes in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+        attachSignin(document.getElementById('customBtn'));
+      });
+    };
+
+    function attachSignin(element) {
+      auth2.attachClickHandler(element, {},
+        function onSignIn(googleUser) {
+          var profile = googleUser.getBasicProfile();
+          function createCookie(key, value, date) {
+            var expiration = new Date()
+            expiration.setTime(expiration.getTime() + hoursUntilCookieExpiration * 3600 * 1000);
+            var cookie = escape(key) + "=" + escape(value) + ";expires=" + expiration + ";";
+            document.cookie = cookie;
+          }
+
+          // Setting email in cookies
+          createCookie('Email', profile.getEmail())
+          createCookie('ID', profile.getId())
+        }, function (error) {
+          alert(JSON.stringify(error, undefined, 2));
+        });
+    }
+  </script>
+  <style type="text/css">
+    #customBtn {
+      background-color: #636361;
+      color: #f7f7f7;
+      width: 10px;
+      height: 10px;
+    }
+
+    #customBtn:hover {
+      cursor: pointer;
+    }
+  </style>
+  <title>Jordan Mullen</title>
+</head>
+
+<body class="App">
+  <noscript>You need to enable JavaScript to run this app.</noscript>
+  <nav class="navbar navbar-expand-lg ">
+    <a class="navbar-brand" href="/">Jordan Mullen</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/resume">Resume</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/aboutme">About Me</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/projects">Projects</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/contact">Contact</a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0 d-flex flex-column">
+        <!-- <div class="admin-sign-in" id='sign-in' data-onsuccess="onSignIn"></div> -->
+        <!-- <div class="g-signin2 my-2 my-sm-0 admin-sign-in" id='sign-in' data-onsuccess="onSignIn"></div> -->
+        <div id="customBtn" class="customGPlusSignIn"></div>
+        <script>startApp();</script>
+        <div class="admin-sign-out" id='sign-out' onclick="signOut()"></div>
+      </form>
+
+    </div>
+  </nav>
+  <div id="root"></div>
+
+  <script>
+    // set hours until cookies expire
+    const hoursUntilCookieExpiration = 24
+
+    function onSignIn(googleUser) {
+      var profile = googleUser.getBasicProfile();
+      function createCookie(key, value, date) {
+        var expiration = new Date()
+        expiration.setTime(expiration.getTime() + hoursUntilCookieExpiration * 3600 * 1000);
+        var cookie = escape(key) + "=" + escape(value) + ";expires=" + expiration + ";";
+        document.cookie = cookie;
+      }
+
+      // Setting email in cookies
+      createCookie('Email', profile.getEmail())
+      createCookie('ID', profile.getId())
+    }
+    // reloads page in all browsers except for Safari
+
+  </script>
+
+  <script>
+    function signOut() {
+      var auth2 = gapi.auth2.getAuthInstance();
+      auth2.signOut().then(function () {
+        console.log('User signed out.');
+      });
+      document.cookie = "Email=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      document.cookie = "ID=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";
+      alert('Successfully Signed Out')
+      window.location.reload()
+    }
+  </script>
+
+  <canvas id="pdf"></canvas>
+</body>
+
 </html>
